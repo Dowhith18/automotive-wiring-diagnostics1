@@ -1,0 +1,177 @@
+.ecuCard {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.ecuCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.specialCard {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.specialCard:hover {
+  background-color: #1a252f;
+}
+
+.refreshing {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.ecuName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.specialCard .ecuName {
+  color: white;
+}
+
+.ecuDescription {
+  font-size: 11px;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.specialCard .ecuDescription {
+  color: #bdc3c7;
+}
+
+.statusSection {
+  margin-bottom: 15px;
+}
+
+.statusLabel {
+  font-size: 10px;
+  color: #95a5a6;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.specialCard .statusLabel {
+  color: #95a5a6;
+}
+
+.statusValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.specialCard .statusValue {
+  color: white;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.statusIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.statusSuccess {
+  background-color: #27ae60;
+  color: white;
+}
+
+.statusError {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.statusDashboard {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.statusDefault {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.dtcCount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.specialCount {
+  display: flex;
+  align-items: center;
+}
+
+.countIcon {
+  font-size: 12px;
+}
+
+.countValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.specialCard .countValue {
+  color: white;
+}
+
+/* Animation for refreshing state */
+.refreshing .statusIcon {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .ecuCard {
+    padding: 12px;
+    min-height: 100px;
+  }
+
+  .ecuName {
+    font-size: 16px;
+  }
+
+  .ecuDescription {
+    font-size: 10px;
+  }
+
+  .statusIcon {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}

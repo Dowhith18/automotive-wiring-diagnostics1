@@ -1,0 +1,203 @@
+.vehicleInfoPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: fit-content;
+}
+
+.infoCard {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.dtcStatusCard {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.ecuStatusCard {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.cardRow:last-child {
+  margin-bottom: 0;
+}
+
+.infoItem {
+  flex: 1;
+  min-width: 120px;
+}
+
+.itemLabel {
+  font-size: 10px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.itemValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* DTC Status Specific Styles */
+.dtcSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dtcItem {
+  text-align: center;
+  width: 100%;
+}
+
+.dtcLabel {
+  font-size: 11px;
+  color: #bdc3c7;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.dtcValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+/* ECU Status Specific Styles */
+.ecuSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ecuRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ecuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ecuLabel {
+  font-size: 11px;
+  color: #bdc3c7;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ecuValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .vehicleInfoPanel {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .infoCard {
+    flex: 1;
+  }
+
+  .cardRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .infoItem {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicleInfoPanel {
+    flex-direction: column;
+  }
+
+  .cardRow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .infoCard {
+    padding: 12px;
+  }
+
+  .dtcValue {
+    font-size: 28px;
+  }
+
+  .ecuValue {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoCard {
+    padding: 10px;
+  }
+
+  .cardTitle {
+    font-size: 12px;
+  }
+
+  .itemValue {
+    font-size: 12px;
+  }
+
+  .dtcValue {
+    font-size: 24px;
+  }
+}
+
+/* Animation for value updates */
+.dtcValue,
+.ecuValue,
+.itemValue {
+  transition: all 0.3s ease;
+}
+
+.dtcValue:not(:empty),
+.ecuValue:not(:empty),
+.itemValue:not(:empty) {
+  animation: valueUpdate 0.5s ease-in-out;
+}
+
+@keyframes valueUpdate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
